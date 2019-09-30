@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Dagger2Demo</string>
+    <string name="alert">Alert</string>
+    <string name="are_you_sure_to_remove">Are You Sure to remove?</string>
+    <string name="no">No</string>
+    <string name="are_you_want_exit">Are You Sure Want to Exit?</string>
 </resources>

@@ -1,0 +1,78 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/dialougeHeader"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="@string/alert"
+        android:textColor="@android:color/white"
+        android:textSize="18sp" />
+
+    <include layout="@layout/item_devider" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingLeft="16dp"
+            android:paddingRight="16dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/body"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="@string/are_you_sure_to_remove"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/noBtn"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:background="@drawable/bg_btn_cancel"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="@string/no"
+                android:theme="@style/AppButtonNegative" />
+
+            <Button
+                android:id="@+id/yesBtn"
+                android:layout_width="@dimen/size_100dp"
+                android:layout_height="@dimen/size_40dp"
+                android:layout_marginStart="@dimen/size_10dp"
+                android:background="@drawable/bg_btn_next"
+                android:text="@string/yes"
+                android:theme="@style/AppButtonPositive">
+
+            </Button>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</LinearLayout>
