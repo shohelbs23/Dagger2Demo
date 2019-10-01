@@ -4,12 +4,14 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.dagger2demo.callback.CommunicatorFragmentInterface
 import com.dagger2demo.ui.base.BaseActivity
+import com.dagger2demo.ui.user.UserFragment
 
 class MainActivity : BaseActivity(), CommunicatorFragmentInterface {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setContentFragment(UserFragment(),false)
     }
 
     override fun setContentFragment(fragment: Fragment?, addToBackStack: Boolean) {

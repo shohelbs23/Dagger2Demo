@@ -50,7 +50,7 @@
             android:gravity="center"
             android:orientation="horizontal">
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/noBtn"
                 android:layout_width="100dp"
                 android:layout_height="40dp"
@@ -60,16 +60,14 @@
                 android:text="@string/no"
                 android:theme="@style/AppButtonNegative" />
 
-            <Button
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/yesBtn"
-                android:layout_width="@dimen/size_100dp"
-                android:layout_height="@dimen/size_40dp"
-                android:layout_marginStart="@dimen/size_10dp"
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="10dp"
                 android:background="@drawable/bg_btn_next"
                 android:text="@string/yes"
-                android:theme="@style/AppButtonPositive">
-
-            </Button>
+                android:theme="@style/AppButtonPositive" />
 
         </LinearLayout>
     </LinearLayout>
