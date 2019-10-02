@@ -1,7 +1,7 @@
 package com.dagger2demo.di.component
 
 import android.app.Application
-import com.dagger2demo.MyApp
+import com.dagger2demo.ui.MyApp
 import com.dagger2demo.di.module.*
 import dagger.BindsInstance
 import dagger.Component
@@ -21,5 +21,5 @@ interface AppComponent {
 
     }
 
-    fun inject(app:MyApp)
+    fun inject(app: MyApp)
 }

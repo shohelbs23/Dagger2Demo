@@ -1,6 +1,6 @@
 package com.dagger2demo.network
 
-import com.dagger2demo.MyApp
+import com.dagger2demo.ui.MyApp
 import okhttp3.Interceptor
 import okhttp3.Response
 import java.io.IOException

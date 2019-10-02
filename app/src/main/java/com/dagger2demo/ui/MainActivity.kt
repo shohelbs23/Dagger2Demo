@@ -1,7 +1,8 @@
-package com.dagger2demo
+package com.dagger2demo.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import com.dagger2demo.R
 import com.dagger2demo.callback.CommunicatorFragmentInterface
 import com.dagger2demo.base.BaseActivity
 import com.dagger2demo.ui.user.UserFragment

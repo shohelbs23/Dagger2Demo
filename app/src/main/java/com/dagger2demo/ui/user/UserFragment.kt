@@ -7,9 +7,8 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.dagger2demo.R
-import com.dagger2demo.di.injectViewModel
 import com.dagger2demo.base.BaseFragment
-import com.dagger2demo.ui.user.user_details.UserDetailsFragment
+import com.dagger2demo.di.injectViewModel
 import kotlinx.android.synthetic.main.fragment_user.*
 import timber.log.Timber
 import javax.inject.Inject
