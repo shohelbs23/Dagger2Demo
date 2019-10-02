@@ -3,10 +3,19 @@ package com.dagger2demo
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.dagger2demo.callback.CommunicatorFragmentInterface
-import com.dagger2demo.ui.base.BaseActivity
+import com.dagger2demo.base.BaseActivity
 import com.dagger2demo.ui.user.UserFragment
+import dagger.android.AndroidInjector
+import dagger.android.DispatchingAndroidInjector
+import dagger.android.support.HasSupportFragmentInjector
+import javax.inject.Inject
 
-class MainActivity : BaseActivity(), CommunicatorFragmentInterface {
+class MainActivity : BaseActivity(), CommunicatorFragmentInterface, HasSupportFragmentInjector {
+
+    @Inject
+    lateinit var dispatchFragmentInjector: DispatchingAndroidInjector<Fragment>
+
+    override fun supportFragmentInjector(): AndroidInjector<Fragment> = dispatchFragmentInjector
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

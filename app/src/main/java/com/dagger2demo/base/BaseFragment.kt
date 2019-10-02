@@ -1,15 +1,14 @@
-package com.dagger2demo.ui.base
+package com.dagger2demo.base
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import com.dagger2demo.callback.CommunicatorFragmentInterface
+import dagger.android.support.AndroidSupportInjection
 
 
 open class BaseFragment : Fragment() {
-
-
 
     fun gotoNewActivityWithClearActivity(activityClass: Class<*>) {
         activity?.let {
@@ -51,6 +50,7 @@ open class BaseFragment : Fragment() {
     var myCommunicator: CommunicatorFragmentInterface? = null
 
     override fun onAttach(context: Context?) {
+        AndroidSupportInjection.inject(this)
         super.onAttach(context)
         try {
             myCommunicator = context as CommunicatorFragmentInterface?

@@ -2,15 +2,14 @@ package com.dagger2demo.di.component
 
 import android.app.Application
 import com.dagger2demo.MyApp
-import com.dagger2demo.di.module.ActivitiyBuilders
-import com.dagger2demo.di.module.AppModule
+import com.dagger2demo.di.module.*
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = [AndroidInjectionModule::class,AppModule::class,ActivitiyBuilders::class])
+@Component(modules = [AndroidInjectionModule::class,AppModule::class,ActivitiyBuilders::class,ApiServiceModule::class,RepositoryModule::class,ViewModelModule::class])
 interface AppComponent {
 
     @Component.Builder

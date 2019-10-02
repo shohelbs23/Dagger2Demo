@@ -1,4 +1,4 @@
-package com.dagger2demo.ui.base
+package com.dagger2demo.base
 
 import android.app.Activity
 import android.content.Context
@@ -15,8 +15,8 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import com.dagger2demo.R
-import com.dagger2demo.callback.CommunicatorFragmentInterface
 import com.dagger2demo.utils.TouchEventManagement
+import dagger.android.AndroidInjection
 
 
 open class BaseActivity : AppCompatActivity() {
@@ -37,6 +37,7 @@ open class BaseActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        AndroidInjection.inject(this)
         touchEventManagement = TouchEventManagement(this, getActivityContentView(this))
     }
 

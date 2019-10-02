@@ -8,7 +8,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/tv_sent"
         android:layout_width="wrap_content"
-        android:text="Sent"
+        android:text="Get User"
         android:layout_height="wrap_content" />
 
 </LinearLayout>

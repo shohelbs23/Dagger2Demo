@@ -5,4 +5,16 @@
     <string name="no">No</string>
     <string name="are_you_want_exit">Are You Sure Want to Exit?</string>
     <string name="yes">Yes</string>
+
+    <!--Api Error-->
+    <string name="msg_no_connection">Please check your internet connection</string>
+    <string name="msg_unknown_exception">Unable to complete request</string>
+    <string name="msg_failed_try_again">Failed! Please try again later.</string>
+    <string name="password">Password</string>
+    <string name="password_asterisk">Password*</string>
+    <string name="forget_user_id_or_password">Forget User ID or Password ?</string>
+    <string name="new_in_josspay">New In JossPay?</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="could_not_connect_server">Could not connect to the server.Please try again</string>
+    <string name="no_internet_msg">No Internet Connection</string>
 </resources>

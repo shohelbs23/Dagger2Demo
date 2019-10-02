@@ -1,12 +1,11 @@
-package com.dagger2demo.ui.user
+package com.dagger2demo.ui.user.user_details
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.dagger2demo.R
-import com.dagger2demo.ui.base.BaseFragment
-import kotlinx.android.synthetic.main.fragment_user.*
+import com.dagger2demo.base.BaseFragment
 
 
 class UserDetailsFragment : BaseFragment() {

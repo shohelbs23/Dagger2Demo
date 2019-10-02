@@ -1,55 +1,41 @@
 package com.dagger2demo.ui.user
 
-import android.content.Context
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import com.dagger2demo.R
-import com.dagger2demo.ui.base.BaseFragment
+import com.dagger2demo.di.injectViewModel
+import com.dagger2demo.base.BaseFragment
+import com.dagger2demo.ui.user.user_details.UserDetailsFragment
 import kotlinx.android.synthetic.main.fragment_user.*
+import timber.log.Timber
+import javax.inject.Inject
 
 
 class UserFragment : BaseFragment() {
 
+    @Inject
+    lateinit var viewModelFactory: ViewModelProvider.Factory
+
+    lateinit var userViewModel: UserViewModel
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        Log.d("User","onCreateView Call")
         return inflater.inflate(R.layout.fragment_user, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Log.d("User","onViewCreated Call")
+        userViewModel=injectViewModel(viewModelFactory)
         tv_sent.setOnClickListener {
-            myCommunicator?.setContentFragment(UserDetailsFragment(),true)
+           userViewModel.getUser(5)
         }
-    }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        Log.d("User","onActivityCreated Call")
-    }
-
-    override fun onAttach(context: Context?) {
-        super.onAttach(context)
-        Log.d("User","onAttach Call")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d("User","onDestroy Call")
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-
-        Log.d("User","onDestroy Call")
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        Log.d("User","onCreate Call")
+        userViewModel.userModel.observe(this, Observer {
+            Timber.d(it.toString())
+        })
     }
 
 
