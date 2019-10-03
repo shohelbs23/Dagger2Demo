@@ -45,7 +45,7 @@ android {
             minifyEnabled false
             applicationIdSuffix '.qa'
             debuggable true
-//            signingConfig signingConfigs.qa
+            signingConfig signingConfigs.qa
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         release {
