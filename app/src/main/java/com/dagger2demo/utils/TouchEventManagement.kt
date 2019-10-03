@@ -46,14 +46,14 @@ class TouchEventManagement(appCompatActivity: AppCompatActivity, vararg parentVi
         return actvity?.window?.decorView?.findViewById(android.R.id.content)!!
     }
 
-    protected fun clearEdittextFocus(v: View, event: MotionEvent) {
+    private fun clearEdittextFocus(v: View, event: MotionEvent) {
         if (!isToucheEventInViewBoundary( event) && !onButtonTouched(event)) {
             v.clearFocus()
             hideSoftKeyboard(context)
         }
     }
 
-    protected fun isToucheEventInViewBoundary( event: MotionEvent): Boolean {
+    private fun isToucheEventInViewBoundary(event: MotionEvent): Boolean {
         if (parentView != null) {
             val outRect = Rect()
             for(view in parentView!!) {
@@ -67,7 +67,7 @@ class TouchEventManagement(appCompatActivity: AppCompatActivity, vararg parentVi
     }
 
 
-    protected fun onButtonTouched(event: MotionEvent): Boolean {
+    private fun onButtonTouched(event: MotionEvent): Boolean {
         return if (isToucheEventInViewBoundary( event)) true else false
 
     }
