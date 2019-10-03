@@ -2,8 +2,6 @@ package com.dagger2demo.ui
 
 import android.app.Activity
 import android.content.Context
-import android.net.ConnectivityManager
-import android.net.NetworkInfo
 import androidx.multidex.MultiDexApplication
 import com.dagger2demo.di.component.DaggerAppComponent
 import com.orhanobut.hawk.Hawk
