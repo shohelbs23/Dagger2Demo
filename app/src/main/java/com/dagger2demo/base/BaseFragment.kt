@@ -49,7 +49,7 @@ open class BaseFragment : Fragment() {
 
     var myCommunicator: CommunicatorFragmentInterface? = null
 
-    override fun onAttach(context: Context?) {
+    override fun onAttach(context: Context) {
         AndroidSupportInjection.inject(this)
         super.onAttach(context)
         try {

@@ -6,11 +6,6 @@ import okhttp3.OkHttpClient
 import okhttp3.Response
 import java.io.IOException
 
-/**
- * Created by Md. Rafiqul Hasan on 4/23/2019.
- * Brain Station 23
- * rafiqul.hasan@bs-23.net
- */
 
 const val COOKIES_PREFS_KEY = "com.example.android.appCookies"
 

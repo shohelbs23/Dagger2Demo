@@ -31,12 +31,6 @@ class MyApp :MultiDexApplication(),HasActivityInjector {
         Hawk.init(this).build()
     }
 
-    fun isNetworkAvailable(): Boolean {
-        val connectivityManager = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        val activeNetworkInfo: NetworkInfo? = connectivityManager.activeNetworkInfo
-        return activeNetworkInfo != null && activeNetworkInfo.isConnected
-    }
-
     companion object {
 
         private const val TAG = "App"

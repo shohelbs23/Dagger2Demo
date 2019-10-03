@@ -1,6 +1,8 @@
 package com.dagger2demo.network
 
 import com.dagger2demo.ui.MyApp
+import com.dagger2demo.utils.NetworkHelper
+import com.dagger2demo.utils.NetworkHelper.isNetworkConnected
 import okhttp3.Interceptor
 import okhttp3.Response
 import java.io.IOException
@@ -25,7 +27,7 @@ class ResponseCacheInterceptor : Interceptor {
                     .removeHeader("ApplyResponseCache")
                     .header(
                             "Cache-Control",
-                            if (MyApp.instance.isNetworkAvailable()) "public, max-age=" + 60 else "public, only-if-cached, max-stale=" + 2419200
+                            if (isNetworkConnected(MyApp.instance)) "public, max-age=" + 60 else "public, only-if-cached, max-stale=" + 2419200
                     )
                     .build()
         } else {

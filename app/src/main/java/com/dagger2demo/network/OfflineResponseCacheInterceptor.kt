@@ -1,6 +1,8 @@
 package com.dagger2demo.network
 
 import com.dagger2demo.ui.MyApp
+import com.dagger2demo.utils.NetworkHelper
+import com.dagger2demo.utils.NetworkHelper.isNetworkConnected
 import okhttp3.Interceptor
 import okhttp3.Response
 import java.io.IOException
@@ -19,7 +21,7 @@ class OfflineResponseCacheInterceptor : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
         var request = chain.request()
         if (java.lang.Boolean.valueOf(request.header("ApplyOfflineCache"))) {
-            if (!MyApp.instance.isNetworkAvailable()) {
+            if (isNetworkConnected(MyApp.instance)) {
                 request = request.newBuilder()
                         .removeHeader("ApplyOfflineCache")
                         .header("Cache-Control", "public, only-if-cached, max-stale=" + 2419200)
